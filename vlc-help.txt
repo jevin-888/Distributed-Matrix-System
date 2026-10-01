@@ -1,0 +1,88 @@
+﻿用法: vlc [选项] [流] ...
+您可以在命令行中指定多个流。
+它们将被加入播放列表队列。
+指定的首个项目将被首先播放。
+
+选项风格:
+  --选项  用于设置程序执行期间的全局选项。
+   -选项  单字母版本的全局 --选项。
+   :选项  仅对此选项之前的单条流生效，
+            且优先级高于先前的设置。
+
+流媒体 MRL 语法:
+  [[协议][/分流]://]URL[#[标题][:章节][-[标题][:章节]]]
+  [:选项=值 ...]
+
+  许多全局 --选项 也可作为 MRL 特定的 :选项 使用。
+  可指定多组 :选项=值。
+
+URL 语法:
+  file:///路径/文件              纯媒体文件
+  http://主机[:端口]/文件        HTTP URL
+  ftp://主机[:端口]/文件         FTP URL
+  mms://主机[:端口]/文件         MMS URL
+  screen://                      屏幕捕获
+  dvd://[设备]                   DVD 设备
+  vcd://[设备]                   VCD 设备
+  cdda://[设备]                  音频 CD 设备
+  udp://[[<源地址>]@[<绑定地址>][:<绑定端口>]]
+                                 流服务器发送的 UDP 流
+  vlc://pause:<秒数>              暂停播放列表一定时间
+  vlc://quit                     用于退出 VLC 的特殊项目
+
+ 可视化滤镜 (visual)
+   通用:
+      --effect-list=<字符串>        效果列表
+          可视化效果列表，由逗号分隔。 当前可用的效果包括: dummy、scope、spectrum（频谱）、spectrometer（频谱仪）与
+          vuMeter。
+      --effect-width=<整数>        视频宽度
+          效果视频窗口的宽度，单位为像素。
+      --effect-height=<整数>       视频高度
+          效果视频窗口的高度，单位为像素。
+      --effect-fft-window={none,hann,flattop,blackmanharris,kaiser} 
+                                 FFT 窗口
+          基于频谱的可视化所使用的 FFT 窗口类型。
+      --effect-kaiser-param=<浮点> Kaiser 窗口参数
+          Kaiser 窗口的 alpha 参数。增加 alpha 即增大主瓣宽度并减小副瓣波幅。
+   频谱分析器:
+      --visual-80-bands, --no-visual-80-bands 
+                                 显示 80 段而非 20 段
+                                 (默认启用)
+          显示 80 段而非 20 段
+      --visual-peaks, --no-visual-peaks 
+                                 在分析器中绘制峰值
+                                 (默认启用)
+          在分析器中绘制峰值
+   频谱仪:
+      --spect-show-original, --no-spect-show-original 
+                                 启用原始图形频谱
+                                 (默认禁用)
+          启用频谱仪的「flat」频谱分析。
+      --spect-show-base, --no-spect-show-base 
+                                 绘制波段基底
+                                 (默认启用)
+          绘制波段基底
+      --spect-radius=<整数>        基本像素半径
+          定义基本波段 (开始) 的半径大小，单位为像素。
+      --spect-sections=<整数 [1 .. 2147483647]> 
+                                 频谱区域
+          频谱将存在多少个区域。
+      --spect-color=<整数>         V 平面颜色
+          YUV 颜色立方体在 V 平面的移位 ( 0 - 127 )。
+      --spect-show-bands, --no-spect-show-bands 
+                                 在频谱仪中绘制波段
+                                 (默认启用)
+          在频谱仪中绘制波段
+      --spect-80-bands, --no-spect-80-bands 
+                                 显示 80 段而非 20 段
+                                 (默认启用)
+          显示 80 段而非 20 段
+      --spect-separ=<整数>         波段之间的空白像素数量。
+          波段之间的空白像素数量。
+      --spect-amp=<整数>           增强
+          修改波段高度的系数。
+      --spect-show-peaks, --no-spect-show-peaks 
+                                 在分析器中绘制峰值
+                                 (默认启用)
+          在分析器中绘制峰值
+      --spect-peak-width=<整数>    �

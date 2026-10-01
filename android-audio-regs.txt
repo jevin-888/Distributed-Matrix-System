@@ -1,0 +1,3 @@
+# Android audio register notes (0x308xxx)
+
+This file contains raw register addresses captured during Android reference-device comparison. Values are diagnostic evidence only; Linux ROM builds use the fixed RK3566 baseline documented in system/firefly-rk356x/build-baseline.env.

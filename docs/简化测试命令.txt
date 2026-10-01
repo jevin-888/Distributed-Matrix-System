@@ -1,0 +1,31 @@
+# 简化版音频测试
+# 直接在 SSH 会话中执行
+
+Write-Host "`n请在 SSH 会话中执行以下命令：`n" -ForegroundColor Cyan
+
+@"
+# 1. 停止服务
+/etc/init.d/S99distributed-matrix stop
+sleep 2
+
+# 2. 找到并杀掉占用进程
+ps aux | grep -E 'arecord|distributed' | grep -v grep
+killall -9 distributed-matrix
+killall -9 arecord
+sleep 1
+
+# 3. 检查 PCM 状态
+cat /proc/asound/card1/pcm0c/sub0/status
+
+# 4. 如果仍然 RUNNING，强制关闭 ALSA 流
+echo 0 > /proc/asound/card1/pcm0c/sub0/hw_params 2>/dev/null || echo "Cannot reset"
+
+# 5. 测试采集
+timeout 3 arecord -D hw:1,0 -f S16_LE -r 48000 -c 2 -d 2 /tmp/final-test.wav
+stat -c%s /tmp/final-test.wav
+
+# 6. 重启服务
+/etc/init.d/S99distributed-matrix start
+"@ | Write-Host -ForegroundColor Yellow
+
+Write-Host "`n把 stat 命令显示的数字告诉我！`n" -ForegroundColor Green

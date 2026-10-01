@@ -1,0 +1,59 @@
+{
+    "node_id":  1,
+    "node_id_file": "/etc/distributed_matrix/node_id",
+    "node_role": "decode",
+    "node_role_file": "/etc/distributed_matrix/node_role",
+    "network":  {
+                    "ip_mode":       "auto",
+                    "local_ip":      "",
+                    "multicast_address":  "239.1.1.1",
+                    "multicast_port":  9001,
+                    "heartbeat_address":  "239.1.1.2",
+                    "heartbeat_port":  9002,
+                    "discovery_port":  9003
+                },
+    "video":  {
+                  "cache_directory":  "/tmp/distributed_matrix/video_cache",
+                  "max_cache_size_mb":  400
+              },
+    "playback":  {
+                     "connector_id":  211,
+                     "plane_id":  78,
+                     "background_plane_id":  56,
+                     "overlay_plane_ids":  [56, 78, 92, 106],
+                     "fullscreen":  true,
+                     "startup_timeout_ms":  10000,
+                     "idle_image_path":  "/usr/share/distributed_matrix/assets/default-idle.png",
+                     "hdmi_preview":  true,
+                     "capture":  {
+                                     "device":  "/dev/video0",
+                                     "pixel_format":  "NV61",
+                                     "width":  1920,
+                                     "height":  1080,
+                                     "framerate_numerator":  0,
+                                     "framerate_denominator":  1,
+                                     "colorimetry":  "bt709",
+                                     "audio_enabled":  true,
+                                     "audio_capture_device":  "hw:CARD=hdmiin,DEV=0",
+                                     "audio_output_mode":  "both",
+                                     "hdmi_audio_device":  "hw:CARD=rockchiphdmi,DEV=0",
+                                     "hdmi_audio_volume":  16.0,
+                                     "analog_audio_device":  "hw:CARD=rk809,DEV=0",
+                                     "analog_audio_volume":  1.0
+                                 },
+                     "startup_animation_path":  "/usr/share/distributed_matrix/assets/boot-animation.mp4",
+                     "startup_animation_timeout_ms":  12000
+                 },
+    "kvm":  {
+                 "enabled":  true,
+                 "role":  "target",
+                 "listen_port":  9101,
+                 "input_devices":  [],
+                 "keyboard_hid_device":  "/dev/hidg0",
+                 "mouse_hid_device":  "/dev/hidg1"
+             },
+    "logging":  {
+                    "level":  "INFO",
+                    "output":  "/tmp/distributed_matrix/log/distributed-matrix.log"
+                }
+}

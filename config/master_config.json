@@ -1,0 +1,34 @@
+{
+  "network": {
+    "ip_mode": "auto",
+    "local_ip": "",
+    "multicast_address": "239.1.1.1",
+    "multicast_port": 9001,
+    "heartbeat_address": "239.1.1.2",
+    "heartbeat_port": 9002,
+    "discovery_port": 9003,
+    "discovery_networks": [],
+    "http_port": 8080
+  },
+  "video": {
+    "cache_directory": "/tmp/distributed_matrix/video_cache",
+    "max_cache_size_mb": 400
+  },
+  "web": {
+    "root_directory": "/usr/share/distributed_matrix/web",
+    "regions_file": "/etc/distributed_matrix/regions.json"
+  },
+  "sync": {
+    "sync_delay_ms": 3000
+  },
+  "layout": {
+    "rows": 2,
+    "cols": 2,
+    "screen_width": 1920,
+    "screen_height": 1080
+  },
+  "logging": {
+    "level": "INFO",
+    "output": ""
+  }
+}

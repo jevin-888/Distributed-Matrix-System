@@ -1,0 +1,23 @@
+name: distributed_playback_system
+description: 分布式播放系统客户端，支持 Windows 与 Android。
+publish_to: 'none'
+version: 1.0.0+1
+
+environment:
+  sdk: "3.12.2"
+  flutter: "3.44.8"
+
+dependencies:
+  flutter:
+    sdk: flutter
+  http: ^1.6.0
+
+dev_dependencies:
+  flutter_test:
+    sdk: flutter
+  flutter_lints: ^6.0.0
+
+flutter:
+  uses-material-design: true
+  assets:
+    - assets/branding/app_logo.png

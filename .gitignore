@@ -1,0 +1,106 @@
+# 编译产物
+build/
+build-*/
+*.o
+*.a
+*.so
+*.exe
+*.out
+distributed-matrix
+
+# CMake 生成文件
+CMakeCache.txt
+CMakeFiles/
+cmake_install.cmake
+Makefile
+*.cmake
+!CMakeLists.txt
+
+# IDE 配置
+.vscode/
+.idea/
+*.swp
+*.swo
+*~
+.DS_Store
+
+# 日志文件
+*.log
+logs/
+
+# 临时文件
+tmp/
+temp/
+*.tmp
+
+# 缓存文件
+cache/
+video_cache/
+
+# 测试产物
+
+# 打包文件
+*.tar.gz
+*.zip
+*.deb
+*.rpm
+
+# 视频文件（测试用）
+*.mp4
+*.mkv
+*.avi
+*.mov
+videos/
+
+# 诊断信息
+diagnostic-*/
+*.tar.gz
+
+# Hardware captures, ROM images, and generated diagnostic archives
+artifacts/
+
+# Required runtime media (the general video rule above is for test media)
+!assets/boot-animation.mp4
+
+# Local workspace metadata / broken link artifacts
+.claude/
+.repo/
+Distributed
+
+# Keil / 8051 generated outputs under the OLED hardware project
+091-I2C/*.LST
+091-I2C/*.M51
+091-I2C/*.hex
+091-I2C/*.lnp
+091-I2C/*.plg
+091-I2C/*.obj
+091-I2C/*.OBJ
+091-I2C/*.map
+091-I2C/1
+
+# 备份文件
+*.bak
+*.backup
+*~
+
+# 编辑器临时文件
+.*.swp
+.*.swo
+*.orig
+
+# Flutter / Android generated files
+hvideo_cashier_flutter/.dart_tool/
+hvideo_cashier_flutter/build/
+hvideo_cashier_flutter/android/.gradle/
+hvideo_cashier_flutter/android/app/build/
+hvideo_cashier_flutter/android/local.properties
+hvideo_cashier_flutter/windows/flutter/ephemeral/
+hvideo_cashier_flutter/release/
+
+# Local diagnostic and ROM output archives
+artifacts/buildroot-rom/
+artifacts/.dms-*/
+artifacts/**/*.img
+artifacts/**/*.wav
+artifacts/**/*.png
+artifacts/**/*.so

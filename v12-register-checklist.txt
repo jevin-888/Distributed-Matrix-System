@@ -1,0 +1,11 @@
+﻿Android vs Linux 音频寄存器对比 (v12)
+
+0x308000 FIFO_CTRL:      0x10000011 ✓ v12已修复
+0x308004 FIFO_TH:        0x01000000 ✓ START=64,MAX=0,MIN=0
+0x308008 Unknown:        0x00000001 ✓ v12已添加
+0x30800c Unknown:        0x0030c15c ✓ 已配置(0x30824c)
+0x308020 SAO_CTRL:       0x00000100 ✓ 已配置
+0x308024 PAO_CTRL:       0x00000f00 ✓ 已配置
+0x308060 SCDC_WRDATA0:   0xabcdef01 ✓ 已配置(line 198)
+
+所有关键音频寄存器均已配置！

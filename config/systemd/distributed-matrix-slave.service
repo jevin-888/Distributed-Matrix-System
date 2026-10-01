@@ -1,0 +1,16 @@
+[Unit]
+Description=Distributed Matrix Slave Node
+Wants=network-online.target display-manager.service
+After=network-online.target display-manager.service
+ConditionPathExists=/dev/dri/card0
+
+[Service]
+Type=simple
+ExecStartPre=/usr/local/sbin/distributed-matrix-display-mode
+ExecStart=/usr/bin/distributed-matrix --role slave --config /etc/distributed_matrix/slave_config.json
+Restart=always
+RestartSec=3
+TimeoutStopSec=10
+
+[Install]
+WantedBy=multi-user.target
